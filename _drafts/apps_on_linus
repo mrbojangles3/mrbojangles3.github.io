@@ -1,0 +1,3 @@
+What needs to change in an application that you no longer need the -devel version of a package?
+do you just try to open the symbol and rely on the linker?
+What about versioning of the libraries?
