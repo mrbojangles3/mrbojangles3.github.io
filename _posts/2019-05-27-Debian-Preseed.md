@@ -1,8 +1,11 @@
 ---
-layout: post
 title: "Automated Install with Debian Preseed"
-author: MrBoJangles3
-date: 2019-05-27
+categories:
+  - Blog
+tags:
+  - System Administration
+  - Debian
+  - Install
 ---
 # Automated Install with Debian Preseed
 

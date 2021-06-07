@@ -1,8 +1,9 @@
 ---
-layout: post
 title: "Cjdns and Hyperboria"
-author: MrBoJangles3
-date: 2015-07-07
+categories:
+  - Blog
+tags:
+  - Mesh Networking
 ---
 # Cjdns Up and Running
 Configuration is as simple as they say:

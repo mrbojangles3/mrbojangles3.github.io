@@ -1,8 +1,11 @@
 ---
-layout: post
 title: "Using the Ceph libradosstriping API"
-author: MrBoJangles3
-date: 2017-05-28
+categories:
+  - Blog
+tags:
+  - Ceph
+  - storage
+  - rados
 ---
 
 # Introduction

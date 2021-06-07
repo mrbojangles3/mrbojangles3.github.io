@@ -1,8 +1,11 @@
 ---
-layout: post
 title: "Packet Size Histograms with eBPF and XDP"
-author: MrBoJangles3
-date: 2018-12-1
+categories:
+  - Blog
+tags:
+  - eBPF
+  - networking
+  - network visibility
 ---
 # Packet Histograms with eBPF XDP
 

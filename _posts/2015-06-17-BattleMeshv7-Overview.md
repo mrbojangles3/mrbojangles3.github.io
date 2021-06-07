@@ -1,8 +1,9 @@
 ---
-layout: post
 title: "BattleMesh v7"
-author: MrBoJangles3
-date: 2015-06-17
+categories:
+  - Blog
+tags:
+ - Mesh Networking
 ---
 # Battle Mesh
 Sadly, it doesn't look like the organizers posted any results from their
