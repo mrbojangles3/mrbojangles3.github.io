@@ -1,8 +1,11 @@
 ---
-layout: post
 title: "Mesh Networking Overview"
 author: MrBoJangles3
-date: 2015-05-31
+categories:
+  - Blog
+tags:
+  - Mesh Networking
+
 ---
 # Overview
 This post will serve as an overview of all the mesh networking technologies,
