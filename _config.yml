@@ -22,7 +22,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 twitter_username: 
 github_username: mrbojangles3
 minimal_mistakes_skin: default
-google_site_verification: IczaU6jeWsV8tvOp-fRcGQe8pE-q23aVOSfc7JyjS9I
+
 search: true
 
 # Build settings
