@@ -1,5 +1,5 @@
 ---
-title: "Using ip and jq to sort statistics"
+title: "Sorting Interfaces by Counters"
 categories:
   - Blog
 tags:
