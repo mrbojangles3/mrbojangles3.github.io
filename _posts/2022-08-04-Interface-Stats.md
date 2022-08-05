@@ -6,6 +6,8 @@ tags:
   - System Administration
   - Networking
   - one-liner
+  - iproute2
+  - jq
 ---
 # Interface Statistics
 When a linux system has many interfaces and you want to identify the interface with the highest packet or byte counters the `-s` and the `-j` flags  combined with the  `jq` utility will be of assitance.
@@ -51,8 +53,8 @@ When a linux system has many interfaces and you want to identify the interface w
 }
 ```
 Instead of `stats64.rx.bytes` there is also `stats64.tx.packets` or a combination of the two.
-A nice option to add to the `jq` output is `ip -s -j link | jq 'max_by(.stats64.rx.bytes)'ifname` which will slot it in nicely to a script.
+A nice option to add to the `jq` output is `ip -s -j link | jq 'max_by(.stats64.rx.bytes).ifname'` which will slot it in nicely to a script.
 
 Also notable is the `sort_by` function of `jq`, `ip -s -j link | jq 'sort_by(.stats64.rx.bytes)[-3:]` which will give us the NICS with the top 3 highest counters.
 
-A collegue pointed out to me that this is a static view of the counters and there could be an active NIC with incrementing counters that hasn't surpassed the highest NIC on the system.
+A colleague pointed out to me that this is a static view of the counters and there could be an active NIC with incrementing counters that hasn't surpassed the highest NIC on the system.
