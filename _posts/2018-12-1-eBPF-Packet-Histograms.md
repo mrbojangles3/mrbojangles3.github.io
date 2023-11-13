@@ -22,7 +22,7 @@ I adapted my code from the `xdp1` example given in the kernel source located in 
 The code examples below utilize the API for XDP programs. From the FAQ above, we know that not all kernel code is available to XDP programs. The example kernel code does some simple math for the packet size and will atomically increment the appropriate counter. The counters are values in the eBPF maps. The user space program will read those counters from the map via file descriptors. Links to documentation are provided as comments to the code. The userspace code include code from `bpf_load.h` which assists in in communicating with the eBPF map.
 ### XDP Kernel Code
 
-``` C
+```
 /* Copyright (c) 2016 PLUMgrid
  *
  * This program is free software; you can redistribute it and/or
@@ -82,7 +82,7 @@ char _license[] SEC("license") = "GPL";
 
 ### XDP User Code
 
-```C
+```
 /* Copyright (c) 2016 PLUMgrid
  *
  * This program is free software; you can redistribute it and/or
