@@ -17,7 +17,6 @@ title: Graybeard in Training
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   a site for blogging, software, and networking topics
-twitter_username: 
 github_username: mrbojangles3
 minimal_mistakes_skin: default
 google_site_verification: IB5WzRrQg20ohFcr_mzqVWUd60w2poM1s7ffTv_e6FE
@@ -72,7 +71,7 @@ footer:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
+      url: "https://github.com/mrbojangles3"
 
 defaults:
   # _posts
