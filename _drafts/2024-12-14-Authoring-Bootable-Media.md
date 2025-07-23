@@ -28,8 +28,10 @@ image_file_name=my_disk.img
 
 size_of_disk=512 
 dd if=/dev/zero of=$image_file_name bs=1M count=$size_of_disk status=progress
-losetup --show --find $image_file_name
- ```
+loop_dev=losetup --show --find $image_file_name 
+
+``` 
+
 
 
 
@@ -52,14 +54,15 @@ Using [fallocate](https://www.man7.org/linux/man-pages/man1/fallocate.1.html)
 to make the file will be quick, but since `fallocate` doesn't write zeros to
 the destination, you could have some garbage in your file system. For that
 reason it is better to use `dd` to make the file that will be used as the disk
-image.
+image. With `dd` you can read from `/dev/zero` to ensure a known state for the
+disk image.
 
 #### Using dd
 
 Use the command: `dd if=/dev/zero of=$image_file_name bs=1M count=$size_of_disk
 status=progress`. The `bs=1M` is how many mebibytes, aka powers of two, to make
 the disk image.  Beware that most storage media is sold in unites of Megabytes,
-aka base 10. If you use `bs=1MB` that will be megabytes in base 10.
+aka base 10. If you use `bs=1MB` that will be megabytes, in base 10.
 
 
 #### Mounting the image
@@ -75,17 +78,30 @@ This command will find an unused loop device, attach the file to it, and return
 the name. Use this device name as the argument for the remaining operations.
 
 
-## Populating the disk
+## Formatting the disk
 
 We have a file, mounted to the system via loop back, but it is empty. To
 actually populate it we need to make a partition table, and a couple of
 partitions. There are a lot of tools out there to use: `parted`, `gparted`,
 `sgdisk`, `gdisk`,`fdisk`.
 
-This guide will use gdisk.
-
 
 ### Making partitions
+
+* Create a gpt partition table: 
+`sudo parted "$loop_dev" mklabel gpt`
+
+* Create an EFI System Partiont (esp),
+ `sudo parted "$loop_dev" mkpart LABEL fat32 1 500MB`
+
+* Mark the first partition as an esp so the UEFI will know to boot from it.
+  `sudo parted "$loop_dev" set 1 esp on`
+
+
+* Make any desired remaining partitions 
+
+`sudo parted "$loop_dev" mkpart LABEL ext4 501MB 100%`
+
 
 
 ### Marking them as bootable
